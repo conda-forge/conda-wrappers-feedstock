@@ -1,12 +1,7 @@
-@set "CREATE_WRAPPERS_COMMAND=create-wrappers"
-
 @if "%PKG_NAME%" == "conda-wrappers" (
     rem It is a conda build environment or it is being installed with
     rem "conda install -n env_name conda-wrappers"
     @set "ENV_DIR=%PREFIX%"
-    rem In this case the environment is not always properly activated, so
-    rem create-wrappers will not be on PATH
-    @set "CREATE_WRAPPERS_COMMAND=%PREFIX%\Scripts\create-wrappers"
 ) else if not "%CONDA_PREFIX%" == "" (
     rem Regular env on newer conda versions
     @set "ENV_DIR=%CONDA_PREFIX%"
@@ -20,6 +15,8 @@
     @for /F %%i in ('conda info --root') do @set "ENV_DIR=%%i"
     @echo None of CONDA_PREFIX, CONDA_DEFAULT_ENV, CONDA_ENV_PATH are set. Assuming conda root env > %ENV_DIR%\.messages.txt
 )
+
+@set "CREATE_WRAPPERS_COMMAND=%ENV_DIR%\Scripts\create-wrappers"
 
 @set "BIN_DIR=%ENV_DIR%\Library\bin"
 @set "SCRIPTS_DIR=%ENV_DIR%\Scripts"

@@ -1,14 +1,9 @@
 #!/bin/bash
 
-CREATE_WRAPPERS_COMMAND=create-wrappers
-
 if [[ "$PKG_NAME" == "conda-wrappers" ]]; then
     # It is a conda build environment or it is being installed with
     # "conda install -n env_name conda-wrappers"
     ENV_DIR="$PREFIX"
-    # In this case the environment is not always properly activated, so
-    # create-wrappers will not be on PATH
-    CREATE_WRAPPERS_COMMAND="$PREFIX/bin/create-wrappers"
 elif [[ ! -z "$CONDA_PREFIX" ]]; then
     # regular env on newer conda versions
     ENV_DIR="$CONDA_PREFIX"
@@ -23,6 +18,8 @@ else
     echo ''
     echo 'None of CONDA_PREFIX, CONDA_DEFAULT_ENV, CONDA_ENV_PATH are set. Assuming conda root env' > $ENV_DIR/.messages.txt
 fi
+
+CREATE_WRAPPERS_COMMAND="$ENV_DIR/bin/create-wrappers"
 
 BIN_DIR="$ENV_DIR/bin"
 WRAPPERS_DIR="$BIN_DIR/wrappers/conda"
