@@ -11,6 +11,18 @@ Summary: Simple package to execute exec-wrappers as a post-link action
 
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/conda-wrappers-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/conda-wrappers-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/conda-wrappers-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/conda-wrappers-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/conda-wrappers-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/conda-wrappers-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/conda-wrappers/badges/version.svg)](https://anaconda.org/conda-forge/conda-wrappers)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/conda-wrappers/badges/downloads.svg)](https://anaconda.org/conda-forge/conda-wrappers)
+
 Installing conda-wrappers
 =========================
 
@@ -31,7 +43,6 @@ It is possible to list all of the versions of `conda-wrappers` available on your
 ```
 conda search conda-wrappers --channel conda-forge
 ```
-
 
 
 About conda-forge
@@ -67,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/conda-wrappers-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/conda-wrappers-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/conda-wrappers-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/conda-wrappers-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/conda-wrappers-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/conda-wrappers-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/conda-wrappers/badges/version.svg)](https://anaconda.org/conda-forge/conda-wrappers)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/conda-wrappers/badges/downloads.svg)](https://anaconda.org/conda-forge/conda-wrappers)
 
 
 Updating conda-wrappers-feedstock
