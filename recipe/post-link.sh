@@ -16,7 +16,7 @@ elif [[ ! -z "$CONDA_DEFAULT_ENV" ]]; then
 else
     ENV_DIR="`conda info --root`"
     echo ''
-    echo 'None of CONDA_PREFIX, CONDA_DEFAULT_ENV, CONDA_ENV_PATH are set. Assuming conda root env' > $ENV_DIR/.messages.txt
+    echo 'None of CONDA_PREFIX, CONDA_DEFAULT_ENV, CONDA_ENV_PATH are set. Assuming conda root env' > "$ENV_DIR/.messages.txt"
 fi
 
 CREATE_WRAPPERS_COMMAND="$ENV_DIR/bin/create-wrappers"
@@ -24,7 +24,7 @@ CREATE_WRAPPERS_COMMAND="$ENV_DIR/bin/create-wrappers"
 BIN_DIR="$ENV_DIR/bin"
 WRAPPERS_DIR="$BIN_DIR/wrappers/conda"
 
-echo "Creating wrappers from $BIN_DIR to $WRAPPERS_DIR" > $ENV_DIR/.messages.txt
+echo "Creating wrappers from $BIN_DIR to $WRAPPERS_DIR" > "$ENV_DIR/.messages.txt"
 "$CREATE_WRAPPERS_COMMAND" \
     -t conda \
     -b "$BIN_DIR" \
