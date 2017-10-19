@@ -13,7 +13,7 @@
     @set "ENV_DIR=%CONDA_ENV_PATH%"
 ) else (
     @for /F %%i in ('conda info --root') do @set "ENV_DIR=%%i"
-    @echo None of CONDA_PREFIX, CONDA_DEFAULT_ENV, CONDA_ENV_PATH are set. Assuming conda root env > "%ENV_DIR%\.messages.txt"
+    @echo None of CONDA_PREFIX, CONDA_DEFAULT_ENV, CONDA_ENV_PATH are set. Assuming conda root env >> "%ENV_DIR%\.messages.txt"
 )
 
 @set "CREATE_WRAPPERS_COMMAND=%ENV_DIR%\Scripts\create-wrappers"
@@ -22,21 +22,21 @@
 @set "SCRIPTS_DIR=%ENV_DIR%\Scripts"
 @set "WRAPPERS_DIR=%ENV_DIR%\Scripts\wrappers\conda"
 
-@echo Creating wrappers from %BIN_DIR% to %WRAPPERS_DIR% > "%ENV_DIR%\.messages.txt"
+@echo Creating wrappers from "%BIN_DIR%" to "%WRAPPERS_DIR%" >> "%ENV_DIR%\.messages.txt"
 @"%CREATE_WRAPPERS_COMMAND%" ^
     -t conda ^
     -b "%BIN_DIR%" ^
     -d "%WRAPPERS_DIR%" ^
     --conda-env-dir "%ENV_DIR%"
 
-@echo Creating wrappers from %SCRIPTS_DIR% to %WRAPPERS_DIR% > "%ENV_DIR%\.messages.txt"
+@echo Creating wrappers from "%SCRIPTS_DIR%" to "%WRAPPERS_DIR%" >> "%ENV_DIR%\.messages.txt"
 @"%CREATE_WRAPPERS_COMMAND%" ^
     -t conda ^
     -b "%SCRIPTS_DIR%" ^
     -d "%WRAPPERS_DIR%" ^
     --conda-env-dir "%ENV_DIR%"
 
-@echo Creating wrappers from %ENV_DIR% to %WRAPPERS_DIR% > "%ENV_DIR%\.messages.txt"
+@echo Creating wrappers from "%ENV_DIR%" to "%WRAPPERS_DIR%" >> "%ENV_DIR%\.messages.txt"
 @"%CREATE_WRAPPERS_COMMAND%" ^
     -t conda ^
     -b "%ENV_DIR%" ^

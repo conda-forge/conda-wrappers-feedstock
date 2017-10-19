@@ -18,10 +18,10 @@
     @set "ENV_DIR=%CONDA_ENV_PATH%"
 ) else (
     @for /F %%i in ('conda info --root') do @set "ENV_DIR=%%i"
-    @echo None of CONDA_PREFIX, CONDA_DEFAULT_ENV, CONDA_ENV_PATH are set. Assuming conda root env > "%ENV_DIR%\.messages.txt"
+    @echo None of CONDA_PREFIX, CONDA_DEFAULT_ENV, CONDA_ENV_PATH are set. Assuming conda root env >> "%ENV_DIR%\.messages.txt"
 )
 
 @set "WRAPPERS_DIR=%ENV_DIR%\Scripts\wrappers\conda"
 
-@echo Removing wrappers from %WRAPPERS_DIR% > "%ENV_DIR%\.messages.txt"
+@echo Removing wrappers from "%WRAPPERS_DIR%" >> "%ENV_DIR%\.messages.txt"
 @rmdir /s /q "%WRAPPERS_DIR%"
