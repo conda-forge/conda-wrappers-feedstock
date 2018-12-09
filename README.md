@@ -1,5 +1,3 @@
-DUMMY COMIT TO CREATE PR
-
 About conda-wrappers
 ====================
 
