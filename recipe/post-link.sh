@@ -27,6 +27,7 @@ WRAPPERS_DIR="$BIN_DIR/wrappers/conda"
 echo "Creating wrappers from $BIN_DIR to $WRAPPERS_DIR" >> "$ENV_DIR/.messages.txt"
 "$CREATE_WRAPPERS_COMMAND" \
     -t conda \
+    --use-exec \
     -b "$BIN_DIR" \
     -d "$WRAPPERS_DIR" \
     --conda-env-dir "$ENV_DIR"
