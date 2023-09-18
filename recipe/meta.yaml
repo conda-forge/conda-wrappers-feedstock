@@ -4,6 +4,11 @@ package:
   name: conda-wrappers
   version: {{ version }}
 
+source:
+  url: https://raw.githubusercontent.com/gqmelo/exec-wrappers/{{ version }}/LICENSE
+  sha256: aaa
+  fn: LICENSE
+
 build:
   number: 4
 
@@ -21,6 +26,7 @@ test:
 about:
   home: https://github.com/gqmelo/exec-wrappers
   license: MIT
+  license_file: LICENSE
   summary: 'Simple package to execute exec-wrappers as a post-link action'
 
 extra:
